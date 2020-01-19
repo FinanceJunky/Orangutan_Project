@@ -38,6 +38,10 @@ def data():
 def Analytics():
     return render_template('analytics.html')
 
+@app.route('/line')
+def Line():
+    return render_template('line.html')
+
 @app.route('/map')
 def Map():
     return render_template('map.html')

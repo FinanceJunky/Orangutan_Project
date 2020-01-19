@@ -26,9 +26,6 @@
                     <a class="nav-link" href="/about">About Us <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="/map">Maps <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
                     <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item dropdown">
@@ -43,77 +40,77 @@
         </div>
     </nav>
 
-    <div class="container">
-        <canvas id="myChart"></canvas>
+    <div class="containertwo">
+        <canvas id="myLineChart"></canvas>
     </div>
 
-    <div class="text-center">
-        <script>
-            let myChart = document.getElementById('myChart').getContext('2d');
+    <script>
+        let myLineChart = document.getElementById('myLineChart').getContext('2d');
 
-            // Global Options
-            Chart.defaults.global.defaultFontFamily = 'Lato';
-            Chart.defaults.global.defaultFontSize = 18;
-            Chart.defaults.global.defaultFontColor = '#777';
+        // Global Options
+        Chart.defaults.global.defaultFontFamily = 'Lato';
+        Chart.defaults.global.defaultFontSize = 18;
+        Chart.defaults.global.defaultFontColor = '#777';
 
-            let massPopChart = new Chart(myChart, {
-                type: 'bar',
-                data: {
-                    labels: ['PKS Sukajadi Sawit Mekar 1', 'Sungai Purun POM', 'PKS Sukajadi Sawit Mekar 2', 'PT MAJU ANEKA SAWIT & GAP POM', 'PT Mustika Sembuluh POM', 'Terawan Mill'],
-                    datasets: [{
-                        label: 'Carbon Radius of Mills',
-                        data: [
-                            248512.945,
-                            239663.64,
-                            237471.135,
-                            232990.355,
-                            228441.28,
-                            215882.065
-                        ],
-                        //backgroundColor:'green',
-                        backgroundColor: [
-                            'rgba(255, 99, 132, 0.6)',
-                            'rgba(54, 162, 235, 0.6)',
-                            'rgba(255, 206, 86, 0.6)',
-                            'rgba(128, 0, 128, 0.6)',
-                            'rgba(255, 105, 180, 0.6)',
-                            'rgba(255, 159, 64, 0.6)',
-                            'rgba(255, 99, 132, 0.6)'
-                        ],
-                        borderWidth: 1,
-                        borderColor: '#777',
-                        hoverBorderWidth: 3,
-                        hoverBorderColor: '#000'
-                    }]
+        let massPopChart = new Chart(myLineChart, {
+            type: 'line',
+            data: {
+                labels: ['PT Inti Indosawit Subur', 'PT Musim Mas', 'PT Salim Ivomas Pratama Tbk', 'Wilmar International Ltd', 'PT Perkebunan Nusantara IV (PERSERO)', 'PT Inti Indosawit Subur'],
+                datasets: [{
+                    label: 'Carbon Radius of Parent Company',
+                    data: [
+                        177220.815,
+                        203201.175,
+                        195088.2,
+                        146270.62,
+                        22743.02,
+                        177210.61
+                    ],
+                    //backgroundColor:'green',
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.6)',
+                        'rgba(54, 162, 235, 0.6)',
+                        'rgba(255, 206, 86, 0.6)',
+                        'rgba(105, 0, 128, 0.6)',
+                        'rgba(255, 105, 180, 0.6)',
+                        'rgba(200, 100, 64, 0.6)',
+                        'rgba(140, 80, 132, 0.6)'
+                    ],
+                    borderWidth: 1,
+                    borderColor: '#777',
+                    hoverBorderWidth: 3,
+                    hoverBorderColor: '#000'
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: 'Carbon Radius',
+                    fontSize: 25
                 },
-                options: {
-                    title: {
-                        display: true,
-                        text: 'Carbon Radius',
-                        fontSize: 25
-                    },
-                    legend: {
-                        display: false,
-                        position: 'right',
-                        labels: {
-                            fontColor: '#000'
-                        }
-                    },
-                    layout: {
-                        padding: {
-                            left: 50,
-                            right: 0,
-                            bottom: 0,
-                            top: 0
-                        }
-                    },
-                    tooltips: {
-                        enabled: true
+                legend: {
+                    display: false,
+                    position: 'right',
+                    labels: {
+                        fontColor: '#000'
                     }
+                },
+                layout: {
+                    padding: {
+                        left: 50,
+                        right: 0,
+                        bottom: 0,
+                        top: 0
+                    }
+                },
+                tooltips: {
+                    enabled: true
                 }
-            });
-        </script>
-    </div>
+            }
+        });
+    </script>
+
+
 </body>
 
 </html>
